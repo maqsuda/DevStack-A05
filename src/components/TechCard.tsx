@@ -8,12 +8,12 @@ interface TechnologyProps {
 
 
 
-const [bgIcon,setBgIcon]=useState('White');
+// const [bgIcon,setBgIcon]=useState('White');
 
 
 const TechnologyCard = ({ technology }: TechnologyProps) => {
   return (
-    <div className="card bg-base-100 w-92 shadow-sm py-5">
+    <div className="card bg-base-100 w-76 shadow-sm py-5">
       <div className="flex justify-between items-center px-5">
         <img className="w-12 h-12" src={technology.icon} />
 {/* if(technology.icon==='react')
