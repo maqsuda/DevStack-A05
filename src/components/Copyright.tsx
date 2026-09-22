@@ -1,11 +1,11 @@
 const Copyright = () => {
   return (
-    <div className="w-11/12 max-w-7xl mx-auto text-gray-400">
-      <div className="flex justify-between items-center">
+    <div className="w-11/12 max-w-7xl mx-auto text-gray-400 mb-5">
+      <div className="flex justify-between items-center text-sm">
         <div>
           <p>© {new Date().getFullYear()} DevStack All right reserved </p>
         </div>
-        <div className="flex justify-between gap-5">
+        <div className="flex justify-between gap-2 lg:gap-5">
           <p>Privacy</p>
           <p>Term</p>
         </div>

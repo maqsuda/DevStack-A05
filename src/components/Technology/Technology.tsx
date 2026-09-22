@@ -15,7 +15,7 @@ const Technology = ({
   const selected = saved.some((item) => item.id === technology.id);
 
   return (
-    <div className="card bg-base-100 w-76 shadow-sm py-5">
+    <div className="card bg-base-100 w-76 shadow-sm py-5 mb-3 lg:mb-0">
       <div className="flex justify-between items-center px-5">
         <img className="w-12 h-12" src={technology.icon} />
         <button

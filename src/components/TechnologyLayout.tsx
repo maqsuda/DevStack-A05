@@ -15,7 +15,6 @@ const TechnologyLayout = () => {
   const [saved, setSaved] = useState<ITechnology[]>([]);
 
   const handleSavedTech = (tech: ITechnology) => {
-    
     const ids = saved.map((item) => item.id); // [1,2 ,2]
 
     if (ids.includes(tech.id)) {
@@ -28,9 +27,8 @@ const TechnologyLayout = () => {
   };
 
   const handleRemoveTech = (id: string) => {
- 
     const findTech = saved.find((item) => item.id === id);
-   
+
     const updatedList = saved.filter((item) => item.id !== id);
     setSaved(updatedList);
     if (findTech) toast.success(`${findTech.category} removed form your list`);
@@ -44,19 +42,19 @@ const TechnologyLayout = () => {
 
   return (
     <section className="container mx-auto ">
-      <div className="">
-        <h2 className="text-5xl font-extrabold mb-5">
+      <div className="mt-5">
+        <h2 className="text-2xl lg:text-5xl font-extrabold mb-5">
           Explore the
           <span className="bg-linear-to-r from-[#EC4899] from-0% via-[#BC52C8] via-22% to-[#8B5CF6] to-100% bg-clip-text text-transparent">
             Technologies
           </span>
         </h2>
-        <p className="text-gray-500 mb-5">
+        <p className="text-gray-500 mb-5 text-lg">
           Pick one technology per category to build your ideal stack.
         </p>
       </div>
 
-      <div className="grid grid-cols-4 gap-5">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-5">
         {/* Technology Component */}
         <Suspense fallback={<h2>Loading....</h2>}>
           <Technologies
