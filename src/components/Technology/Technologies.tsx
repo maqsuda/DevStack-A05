@@ -2,21 +2,24 @@ import { use } from "react";
 import Technology from "./Technology";
 import type { ITechnology } from "../../types/types";
 
-// interface TechnologyProps {
-//   exploreTechnologiesPromise: Promise<ITechnology[]>;
-// }
+interface TechnologiesProps {
+  techPromise: Promise<ITechnology[]>;
+  handleSavedTech: (book: ITechnology) => void;
+  saved: ITechnology[];
+}
 
 const Technologies = ({
-  exploreTechnologiesPromise,
-}: {
-  exploreTechnologiesPromise: Promise<ITechnology[]>;
-}) => {
-  const allTechnology = use(exploreTechnologiesPromise);
+  techPromise,
+  handleSavedTech,
+  saved,
+}: TechnologiesProps) => {
+  const allTechnology = use(techPromise);
+  // console.log("All Tech :", allTechnology);
   return (
     <div className="col-span-3 grid grid-cols-3 gap-5 ">
-      {allTechnology.length === 0 && <p>'No technology'</p>}
+      {allTechnology.length === 0 && <p>'No Technology Found'</p>}
       {allTechnology.map((tech) => (
-        <Technology key={tech.id} technology={tech}></Technology>
+        <Technology key={tech.id} technology={tech} handleSavedTech={handleSavedTech} saved={saved}></Technology>
       ))}
     </div>
   );

@@ -3,11 +3,17 @@ import { FaStar } from "react-icons/fa";
 
 interface TechnologyProps {
   technology: ITechnology;
+  saved: ITechnology[];
+  handleSavedTech: (tech: ITechnology) => void;
 }
 
-// const [bgIcon,setBgIcon]=useState('White');
+const Technology = ({
+  technology,
+  handleSavedTech,
+  saved,
+}: TechnologyProps) => {
+  const selected = saved.some((item) => item.id === technology.id);
 
-const Technology = ({ technology }: TechnologyProps) => {
   return (
     <div className="card bg-base-100 w-76 shadow-sm py-5">
       <div className="flex justify-between items-center px-5">
@@ -41,7 +47,11 @@ const Technology = ({ technology }: TechnologyProps) => {
         </div>
       </div>
 
-      <button className="bg-black text-white px-10 rounded mx-5 py-1">
+      <button
+        className="bg-black text-white px-10 rounded mx-5 py-1"
+        disabled={selected}
+        onClick={() => handleSavedTech(technology)}
+      >
         Add To Stack
       </button>
     </div>

@@ -10,7 +10,7 @@ const Navbar = () => {
 
         <div>
           <ul className="flex gap-4 justify-between items-center">
-            <li className="text-[#DB2777]">Home</li>
+            <li className="text-[#D91B7E]">Home</li>
             <li>Technologies</li>
             <li>Projects</li>
             <li>About</li>
@@ -21,7 +21,9 @@ const Navbar = () => {
 
         <div className="flex justify-between items-center">
           <button className="py-1 px-3 rounded-full ">Sign In</button>
-          <button className="bg-red-500 rounded-full py-1 px-3">Sign Up</button>
+          <button className="bg-[#D91B7E] rounded-full py-1 px-3">
+            Sign Up
+          </button>
         </div>
       </div>
     </nav>
