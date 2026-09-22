@@ -40,9 +40,9 @@ const Technology = ({
             {technology.category}
           </div>
           <div className="px-1 py-1">{technology.difficulty}</div>
-          <div className="flex items-center  px-2 py-1">
-            <FaStar className="text-amber-300" />
-            {technology.rating}
+          <div className="flex items-center  px-2 py-1 ">
+            <FaStar className="text-[#FF5722]" />
+            <p className="text-[#FF5722]">{technology.rating}</p>
           </div>
         </div>
       </div>
