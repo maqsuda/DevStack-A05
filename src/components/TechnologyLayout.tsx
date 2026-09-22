@@ -15,7 +15,7 @@ const TechnologyLayout = () => {
   const [saved, setSaved] = useState<ITechnology[]>([]);
 
   const handleSavedTech = (tech: ITechnology) => {
-    // check book is already added
+    
     const ids = saved.map((item) => item.id); // [1,2 ,2]
 
     if (ids.includes(tech.id)) {
@@ -28,9 +28,9 @@ const TechnologyLayout = () => {
   };
 
   const handleRemoveTech = (id: string) => {
-    // check the item is available
+ 
     const findTech = saved.find((item) => item.id === id);
-    // if (!findBook) return toast.error('Books Not found')
+   
     const updatedList = saved.filter((item) => item.id !== id);
     setSaved(updatedList);
     if (findTech) toast.success(`${findTech.category} removed form your list`);
