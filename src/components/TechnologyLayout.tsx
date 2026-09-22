@@ -2,7 +2,8 @@ import { Suspense, useState } from "react";
 import Sidebar from "./Technology/Sidebar";
 import type { ITechnology } from "../types/types";
 import Technologies from "./Technology/Technologies";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
+import toast from 'react-hot-toast'
 
 const exploreTechnologiesFetch = async (): Promise<ITechnology[]> => {
   const res = await fetch("./data.json");
@@ -18,12 +19,12 @@ const TechnologyLayout = () => {
     const ids = saved.map((item) => item.id); // [1,2 ,2]
 
     if (ids.includes(tech.id)) {
-      toast.error(`${tech.category} is already on your list`);
+      toast.error(`${tech.name} is already on your list`);
       return;
     }
 
     setSaved([...saved, tech]);
-    toast.success(`${tech.category} added on your list`);
+    toast.success(`${tech.name} added on your list`);
   };
 
   const handleRemoveTech = (id: string) => {
@@ -31,13 +32,13 @@ const TechnologyLayout = () => {
 
     const updatedList = saved.filter((item) => item.id !== id);
     setSaved(updatedList);
-    if (findTech) toast.success(`${findTech.category} removed form your list`);
+    if (findTech) toast.success(`${findTech.name} removed form your list`);
   };
 
   const handleClearAll = () => {
     if (!saved.length) return;
     setSaved([]);
-    toast.success("Your technology list is clear.", { position: "top-right" });
+    toast.success("Your technology list is clear.", { position: "top-center" });
   };
 
   return (
