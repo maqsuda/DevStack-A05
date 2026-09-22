@@ -12,22 +12,29 @@ const Technology = ({ technology }: TechnologyProps) => {
     <div className="card bg-base-100 w-76 shadow-sm py-5">
       <div className="flex justify-between items-center px-5">
         <img className="w-12 h-12" src={technology.icon} />
-        {/* if(technology.icon==='react')
-{
-  setBgIcon='blue'
-}
-         */}
-        <button className="py-1 px-2 rounded-2xl  bg-bgIcon text-blue-500">
+        <button
+          className="py-1 px-2 rounded-2xl  bg-bgIcon "
+          style={{
+            color: technology.color,
+            backgroundColor: `${technology.color}20`,
+          }}
+        >
           {technology.badge}
         </button>
       </div>
+
       <div className="card-body">
         <h2 className="card-title">{technology.name}</h2>
         <p>{technology.description}</p>
-        <div className="card-actions justify-between">
-          <div className="badge badge-outline">{technology.category}</div>
-          <div className="badge badge-outline">{technology.difficulty}</div>
-          <div className="badge badge-outline">
+
+        <hr className="text-gray-100" />
+
+        <div className="flex justify-between gap-1">
+          <div className=" bg-gray-100 rounded-xl px-2 py-1">
+            {technology.category}
+          </div>
+          <div className="px-1 py-1">{technology.difficulty}</div>
+          <div className="flex items-center  px-2 py-1">
             <FaStar className="text-amber-300" />
             {technology.rating}
           </div>
