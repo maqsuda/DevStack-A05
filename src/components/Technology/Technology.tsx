@@ -1,22 +1,18 @@
-import { useState } from "react";
-import type { ITechnology } from "../types/types";
+import type { ITechnology } from "../../types/types";
 import { FaStar } from "react-icons/fa";
 
 interface TechnologyProps {
   technology: ITechnology;
 }
 
-
-
 // const [bgIcon,setBgIcon]=useState('White');
 
-
-const TechnologyCard = ({ technology }: TechnologyProps) => {
+const Technology = ({ technology }: TechnologyProps) => {
   return (
     <div className="card bg-base-100 w-76 shadow-sm py-5">
       <div className="flex justify-between items-center px-5">
         <img className="w-12 h-12" src={technology.icon} />
-{/* if(technology.icon==='react')
+        {/* if(technology.icon==='react')
 {
   setBgIcon='blue'
 }
@@ -45,4 +41,4 @@ const TechnologyCard = ({ technology }: TechnologyProps) => {
   );
 };
 
-export default TechnologyCard;
+export default Technology;

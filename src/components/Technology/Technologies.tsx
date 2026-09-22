@@ -1,12 +1,12 @@
 import { use } from "react";
-import type { ITechnology } from "../types/types";
-import TechCard from "./TechCard";
+import Technology from "./Technology";
+import type { ITechnology } from "../../types/types";
 
 // interface TechnologyProps {
 //   exploreTechnologiesPromise: Promise<ITechnology[]>;
 // }
 
-const ExploreTechnology = ({
+const Technologies = ({
   exploreTechnologiesPromise,
 }: {
   exploreTechnologiesPromise: Promise<ITechnology[]>;
@@ -17,10 +17,10 @@ const ExploreTechnology = ({
     <div className="col-span-3 grid grid-cols-3 gap-5 ">
       {allTechnology.length === 0 && <p>'No technology'</p>}
       {allTechnology.map((tech) => (
-        <TechCard key={tech.id} technology={tech}></TechCard>
+        <Technology key={tech.id} technology={tech}></Technology>
       ))}
     </div>
   );
 };
 
-export default ExploreTechnology;
+export default Technologies;
